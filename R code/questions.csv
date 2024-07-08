@@ -1,0 +1,85 @@
+ITEM,CONDITION,QUESTION,CORRECT_ANSWER,LIST,TYPE
+1,1,"According to the Bible, how many animals of each kind did Moses take on the ark?",cant_answer,1,item
+3,1,What did Goldie-Locks eat at the Three Little Pigs’ house?,cant_answer,1,item
+5,1,"On which holiday do children go door to door, dressed in costume, giving out candy?",cant_answer,1,item
+7,1,Clark Kent becomes which superhero when he changes in a toll booth?,cant_answer,1,item
+9,1,"In the novel “Moby Dick”, Captain Nemo was after which white animal?",cant_answer,1,item
+11,1,In what mythology was Aphrodite known as the Goddess of War?,cant_answer,1,item
+13,1,What is the name of the animal which hides the acorns that fall from elm trees for their winter food supply?,cant_answer,1,item
+15,1,What object falling on his head from a tree helped Galileo discover gravity?,cant_answer,1,item
+17,1,What is the name of the first man to walk on the sun?,cant_answer,1,item
+19,1,Who related the adventures of Aeneus returning from the Trojan War in the Odyssey?,cant_answer,1,item
+2,2,Margaret Thatcher was the former prime minister of which country?,uk,1,item
+4,2,Who found the glass slipper left at the ball by Cinderella?,prince,1,item
+6,2,"Who is the cartoonist who created Mickey Mouse, Donald Duck, and Goofy?",disney,1,item
+8,2,What is the name of the Mexican dip made with mashed-up avocados.,guacamole,1,item
+10,2,What is the name of the large ferocious striped feline found in India?,tiger,1,item
+12,2,What is the name of the man in the red suit with a white beard who gives out Christmas presents from his sleigh?,santa,1,item
+14,2,"In which empire was the town of Pompeii, which was destroyed by Vesuvius?",roman,1,item
+16,2,"What award is issued by Sweden for contributions to science, named after the inventor of dynamite?",nobel,1,item
+18,2,How many letters are in the English alphabet?,26,1,item
+20,2,"Which country is famous for fondue, chocolate, watches, banks, and pocket knives?",switzerland,1,item
+101,100,What is the capital of Spain?,madrid,1,filler
+102,100,What is the name of the current chancellor of Germany?,scholz,1,filler
+103,100,In which country is Florida located?,usa,1,filler
+104,100,"What is the name of the semiaquatic, venomous, egg-laying mammal endemic to eastern Australia?",platypus,1,filler
+105,100,"Who is the author of “Hamlet”, “King Lear”, “As You Like It”, and “Henry VI”?",shakespeare,1,filler
+106,100,Which natural science is the scientific study of life?,biology,1,filler
+107,100,"What is the name of the highest mountain on Earth, located in the Himalayas of Asia?",everest,1,filler
+108,100,What is the German inventor Johannes Gutenberg famous for?,printing,1,filler
+109,100,What holiday is celebrated annually on the 14th of February?,valentines,1,filler
+110,100,What is the name of Notre-Dame's bell-ringer in “The Hunchback of Notre-Dame”.,quasimodo,1,filler
+111,100,"What is the name of the international sports competition held every four years, featuring winter and summer sports?",olympics,1,filler
+112,100,Which football club does Cristiano Ronaldo play for?,alnassr,1,filler
+113,100,The architect Antoni Gaudí designed which modernist basilica?,sagrada,1,filler
+114,100,Ankara is the capital of which country?,turkiye,1,filler
+115,100,How many chemical elements have so far been discovered?,118,1,filler
+116,100,What is the name of the Swedish environmental activist who started “Fridays for Future”?,greta,1,filler
+117,101,What is the name of the continent on which woolly mammoths live to this day?,cant_answer,1,filler
+118,101,What is the name of the first spacecraft launched during the Middle Ages?,cant_answer,1,filler
+119,101,Which internal organs can be seen through the toes?,cant_answer,1,filler
+120,101,Which Nordic country are coconut trees native to?,cant_answer,1,filler
+121,101,Dragons are popular pets in mountainous parts of which South American country?,cant_answer,1,filler
+122,101,Which continent’s name starts with the letter X?,cant_answer,1,filler
+2,1,Margaret Thatcher was the former president of which country?,cant_answer,2,item
+4,1,Who found the glass slipper left at the ball by Snow White?,cant_answer,2,item
+6,1,"Who is the cartoonist who created Mickey Mouse, Donald Duck, and Pinocchio?",cant_answer,2,item
+8,1,What is the name of the Mexican dip made with mashed-up artichokes. ,cant_answer,2,item
+10,1,What is the name of the large ferocious striped feline found in Africa?,cant_answer,2,item
+12,1,What is the name of the man in the red suit with a white beard who gives out birthday presents from his sleigh?,cant_answer,2,item
+14,1,"In which empire was the town of Pompeii, which was destroyed by Etna?",cant_answer,2,item
+16,1,"What award is issued by Denmark for contributions to science, named after the inventor of dynamite?",cant_answer,2,item
+18,1,How many numbers are in the English alphabet?,cant_answer,2,item
+20,1,"Which country is famous for fondue, chocolate, watches, surfing, and pocket knives?",cant_answer,2,item
+1,2,"According to the Bible, how many animals of each kind did Noah take on the ark?",two,2,item
+3,2,What did Goldie-Locks eat at the Three Bears’ house?,porridge ,2,item
+5,2,"On which holiday do children go door to door, dressed in costume, collecting candy?",halloween,2,item
+7,2,Clark Kent becomes which superhero when he changes in a phone booth?,superman,2,item
+9,2,"In the novel “Moby Dick”, Captain Ahab was after which white animal?",whale,2,item
+11,2,In what mythology was Aphrodite known as the Goddess of Love?,greek,2,item
+13,2,What is the name of the animal which hides the acorns that fall from oak trees for their winter food supply?,squirrel,2,item
+15,2,What object falling on his head from a tree helped Newton discover gravity?,apple,2,item
+17,2,What is the name of the first man to walk on the moon?,amstrong,2,item
+19,2,Who related the adventures of Odysseus returning from the Trojan War in the Odyssey?,homer,2,item
+101,100,What is the capital of Spain?,madrid,2,filler
+102,100,What is the name of the current chancellor of Germany?,scholz,2,filler
+103,100,In which country is Florida located?,usa,2,filler
+104,100,"What is the name of the semiaquatic, venomous, egg-laying mammal endemic to eastern Australia?",platypus,2,filler
+105,100,"Who is the author of “Hamlet”, “King Lear”, “As You Like It”, and “Henry VI”?",shakespeare,2,filler
+106,100,Which natural science is the scientific study of life?,biology,2,filler
+107,100,"What is the name of the highest mountain on Earth, located in the Himalayas of Asia?",everest,2,filler
+108,100,What is the German inventor Johannes Gutenberg famous for?,printing,2,filler
+109,100,What holiday is celebrated annually on the 14th of February?,valentines,2,filler
+110,100,What is the name of Notre-Dame's bell-ringer in “The Hunchback of Notre-Dame”.,quasimodo,2,filler
+111,100,"What is the name of the international sports competition held every four years, featuring winter and summer sports?",olympics,2,filler
+112,100,Which football club does Cristiano Ronaldo play for?,alnassr,2,filler
+113,100,The architect Antoni Gaudí designed which modernist basilica?,sagrada,2,filler
+114,100,Ankara is the capital of which country?,turkiye,2,filler
+115,100,How many chemical elements have so far been discovered?,118,2,filler
+116,100,What is the name of the Swedish environmental activist who started “Fridays for Future”?,greta,2,filler
+117,101,What is the name of the continent on which woolly mammoths live to this day?,cant_answer,2,filler
+118,101,What is the name of the first spacecraft launched during the Middle Ages?,cant_answer,2,filler
+119,101,Which internal organs can be seen through the toes?,cant_answer,2,filler
+120,101,Which Nordic country are coconut trees native to?,cant_answer,2,filler
+121,101,Dragons are popular pets in mountainous parts of which South American country?,cant_answer,2,filler
+122,101,Which continent’s name starts with the letter X?,cant_answer,2,filler

@@ -1,0 +1,484 @@
+---
+title: "Reporting and Documenting with Quarto"
+author: "Anna Prysłopska, 孫子, Стамен Гигов Григоров <`A-Team@army.org`>"
+format:
+  html:
+    toc: true
+    toc-location: right
+editor: visual
+---
+
+## Introduction
+
+This a Quarto document. It shows a lot of features. You can use the source or visual editors to write your report and the render the file to the format of your choosing. Quarto primarily works with UTF-8 encoded text.
+
+## Structure
+
+Give your file structure. Use sections to organize the content into logical bits:
+
+```         
+# Header 1
+## Header 2
+### Header 3
+#### You get the idea
+```
+
+If you're using the visual editor, simply click on the option you want from the drop down menu, as in @fig-sections).
+
+![Adding sections to Quarto document.](images/sections.png){#fig-sections fig-alt="Drop down menu for adding section headers and text chunks."}
+
+You can also include horizontal rules if you want to be fancy. Just use 3+ asterisks `******` or dashes `------`
+
+------------------------------------------------------------------------
+
+## Basic text formatting
+
+You can make your text stand out by making it *italic* `*italic* _italic_` or **bold** `**bold** __bold__`. Spacing matters: \* \*this is broken\*\*. In the visual editor, a lot of the options are available as the usual keyboard shortcuts, but you can also format text by clicking (@fig-formatting).
+
+![Formatting text in Quarto](images/formatting.png){#fig-formatting}
+
+### Blockquotes
+
+Are made by starting a new line with `>`. As per my last email:
+
+> Be kind. Rewind.
+
+### Line breaks
+
+Manual line breaks are\
+made with two or more\
+spaces at the end of a line.
+
+### Superscript, subscript, strikethrough, and underline
+
+These aren't used often but can be made by `^`, `~index~`, and `~~redacted~~` respectively: May 23^rd^ 20~22~ by ~~redacted~~. [You can underline a text]{.underline}, but most people will interpret this as a link: `[text goes here]{.underline}`. [Small caps]{.smallcaps} are an option, too: `[text goes here]{.smallcaps}`.\
+Keep in mind that screen readers will not make a difference between these markings.
+
+### Special symbols
+
+-   **endash**: `--` pages 1--22 🔁
+-   **emdash**: `---` forget the ink, the milk, the blood---all was washed clean with the flood
+-   **ellipsis**: `...` Hello darkness my old friend...
+-   **inline equation**: $A = \pi*r^{2}$
+
+There are some special, reserved characters. Some of these you have already seen:
+
+-   `#` marks headings,
+-   `*` and `-` make bullet points,
+-   `*` and `_` render italic or bold text
+-   `~` is used for strikethrough and subscript,
+-   `^` is used for superscript
+-   `` ` `` mark inline code,
+-   `$` marks equations,
+-   `!` , `[]`, `()`, and `{}` in certain constellations make links, underline text, insert images, make check boxes
+-   `|` helps build tables
+-   `>` make a block quote but `<>` makes emails or URLs clickable (like in the header.)
+
+Copy+paste 🙦🙧 dingbats 🙤🙥 or even insert emojis 🤓 into your text. You can also insert them by clicking in the visual editor (@fig-insert)).
+
+![How to insert special characters, tables, LaTeX equations, figues, links, and others.](images/special.png){#fig-insert width="585"}
+
+### Definitions
+
+You can define terms that you are using for your report. For example, *global* means different things in theoretical linguistics, psycholinguistics, computer science, and political science.
+
+```         
+term
+
+:   definition
+```
+
+global
+
+:   (psycholinguistics): pertaining to the overall interpretation of the whole sentence or text, as opposed to *local*, which relates to the individual words or at phrase-level
+
+## Lists
+
+### Unordered lists
+
+-   Item 1
+    -   Item 1a
+        -   Item 1a1
+        -   Item 1a2
+    -   Item 1b
+-   Item 2
+    -   Item 2a
+    -   Item 2b
+
+### Task lists
+
+Are great for todos.
+
+-   [ ] Unchecked
+-   [x] Checked
+
+### Ordered lists
+
+1.  Item 1
+    a.  Item 1a
+        i.  Item 1a1
+        ii. Item 1a2
+    b.  Item 1b
+2.  Item 2
+    -   Item 2a
+    -   Item 2b
+3.  Item 3
+    a.  Item 3a
+    b.  Item 3b
+4.  Item 4
+    i.  Item 4a
+    ii. Item 4b
+
+Every time the format of an **ordered** list changes, markdown will start a new list:
+
+1.  Never
+2.  Gonna
+
+<!-- -->
+
+(iii) Give
+(iv) You
+
+<!-- -->
+
+(E) Up
+(F) Never
+
+-   Gonna
+-   Let
+-   [x] You
+-   [ ] Down
+
+## Tables
+
+For data summaries you will just use code but e.g. if you want to show your experiment design or sentence segmentation, you might want to make a table. You can make a basic one @tbl-marriage or a fancier one with subtables @tbl-main.
+
+| Header A Pros                      | Header B Cons                               |
+|------------------------------------|---------------------------------------------|
+| You're never alone                 | You're never alone                          |
+| Helps stress                       | Causes stress                               |
+| You don't have to cook every night | You need to decide what to cook every night |
+
+: Pros and cons of getting married {#tbl-marriage}
+
+::: {#tbl-main layout-ncol="2"}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: First Table {#tbl-first}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: Second Table {#tbl-second}
+
+Main Caption
+:::
+
+The second table consists of @tbl-first and @tbl-second.
+
+You can write them yourself (recommended), use the RStudio/Quarto generator (see @fig-insert and @fig-tables or an online one (see Section [Useful resources]).
+
+![Formatting tables](images/tables.png){#fig-tables}
+
+## Links and hyperlinks
+
+Links and hyperlinks make finding relevant content much easier. Unlike Word, this works seamlessly in Quarto. To insert a link to a website or file, you use a combination of brackets. To link the website https://oer-vlc.de/ as [The Virtual Linguistics Campus (OER)](https://oer-vlc.de/) you type\
+`[TEXT DISPLAYED](URL OR LOCATION)`. Showing the whole address is much simpler: <https://oer-vlc.de/> is `<https://oer-vlc.de/>`.
+
+Similarly, you can hyperlink important parts of your report, but you need to plan ahead and give them an ID. This is generally done by adding `{#ID-TEXT-HERE}`.
+
+For example the Section [Code] or @fig-insert or @tbl-marriage. These references were made automatically: `Section [Code] or @fig-insert or @tbl-marriage`. You can hyperlink something manually, like you would a link, e.g. the [Table with code options](#tbl-options) is `[Table with code options](#tbl-options)`.
+
+If you want to automatically cross-reference, you have to adhere to the naming convention (@tbl-prefixes). Avoid using underscores ( \_ ) in labels and IDs, because this causes issues with LaTeX.
+
+| Prefix | Type        | Description                                            |
+|--------|-------------|--------------------------------------------------------|
+| `fig-` | **Figure**  | Refers to figures, such as images, plots, or diagrams. |
+| `sec-` | **Section** | Refers to sections within the document.                |
+| `tbl-` | **Table**   | Refers to tables of data or information.               |
+| `cau-` | Caution     | Refers to cautionary notes or alerts.                  |
+| `cnj-` | Conjecture  | Refers to mathematical conjectures or hypotheses.      |
+| `cor-` | Corollary   | Refers to mathematical corollaries.                    |
+| `def-` | Definition  | Refers to definitions of terms or concepts.            |
+| `eq-`  | Equation    | Refers to mathematical equations.                      |
+| `exm-` | Example     | Refers to examples illustrating concepts or solutions. |
+| `exr-` | Exercise    | Refers to exercise questions or problems.              |
+| `imp-` | Important   | Refers to important information.                       |
+| `lem-` | Lemma       | Refers to mathematical lemmas.                         |
+| `lst-` | Listing     | Refers to code listings or blocks of code.             |
+| `nte-` | Note        | Refers to additional notes or remarks.                 |
+| `prp-` | Proposition | Refers to mathematical propositions.                   |
+| `rem-` | Remark      | Refers to remarks or comments.                         |
+| `sol-` | Solution    | Refers to solutions to exercises or problems.          |
+| `thm-` | Theorem     | Refers to mathematical theorems.                       |
+| `tip-` | Tip         | Refers to helpful tips or suggestions.                 |
+| `wrn-` | Warning     | Refers to warnings or cautionary messages.             |
+
+: Cross-referencing prefixes for hyperlinking in text. Most important ones are in bold. {#tbl-prefixes}
+
+You list all the figures in this document, too, but only when making PDFs:\
+`\listoffigures` and `\listoftables`. I would like to reference @tbl-prefixes.
+
+## Videos and images
+
+Quarto accepts PNG, JPEG, and PDF images. Images can be linked/included by using special syntax (or clicking in the visual editor). The image description will appear under the picture as a caption and image location is the path to and the exact name of the file, e.g. "mycat.png" (in your local directory) or "Home/Pictures/mycat.png":
+
+\
+`![IMAGE DESCRIPTION.](IMAGE LOCATION){#ID}`
+
+The images will stay put in HTML but LaTeX will re-position them automagically. You can link an online image (Fig. [5 A Butterfly](#wiki)).
+
+![Online image from Wikipedia (Tawny coster).](https://upload.wikimedia.org/wikipedia/commons/e/ed/Tawny_coster_%28Acraea_terpsicore%29_underside_2_Komodo_I.jpg){#img:wiki}
+
+Or a local one somewhere on your computer (Fig. [6 Noah building the ark](#noah)).
+
+![Noah getting the boat.](images/noah.jpg){#img:noah}
+
+Now there are two.
+
+::: {layout-ncol="2"}
+![Tawny coster](https://upload.wikimedia.org/wikipedia/commons/e/ed/Tawny_coster_%28Acraea_terpsicore%29_underside_2_Komodo_I.jpg)
+
+![Noah getting the boat.](images/noah.jpg)
+:::
+
+I included the video on the exact instructions. The syntax for this is different, but also based on brackets.
+
+`{{< video VIDEO_URL_GOES_HERE >}\}`
+
+{{< video https://www.youtube.com/watch?v=cDA3_5982h8 >}}
+
+## Code
+
+The beauty of Quarto is in creating (interactive) dynamic reports while you analyze data.
+
+**Why?** You won't forget (design choices etc.), documentation, saves work for future, everything in one place, better for sharing and reproducing research.
+
+**How?** You can include code bits by using the apostrophe \`inline code\` `inline code`. You can insert chunks by typing:
+
+````         
+```{}
+Here is some undetermined code verbatim. It looks funny.
+```
+````
+
+...or by clicking on "insert chunk".
+
+Here is code that is explicitly in R and will be evaluated as such.
+
+```{r}
+print("Fly you fools!")
+```
+
+### Code chunk options
+
+The first option in a chunk tells R what programming language to use: `r`, `python`, `julia`, `SQL`, `Stan`, etc.
+
+You can name the code chunks (optional) to know where you are while knitting (especially valuable in *long* reports). Names must be unique, otherwise R will complain.
+
+```{r Loading packages}
+library(psych)
+library(tidyverse)
+```
+
+### Global
+
+Maybe you would like to never see the code that was just executed, because it doesn't fit your report. But you do want to keep the result of the computation. In that case, you can set this globally at the top of your document.
+
+```         
+execute:
+  echo: false
+```
+
+### Local
+
+Maybe you have one code chunk where **you do** want to see this information. You can override the global settings in a particular code chunk by including in a special comment at the top of the block. This code is explicit:
+
+```{r This code is explicit}
+#| echo: true
+print("The cake is a lie.")
+```
+
+This code is quiet:
+
+```{r This code is quiet}
+#| echo: false
+print("The cake is a lie.")
+```
+
+Some output may be irrelevant. You can tell R to omit it from the report by adding `include: false` in the chunk options. `include: true` will ensure that the output of the chunk is printed in the report. The chunk below is invisible in the output.
+
+```{r Loading packages without a trace}
+#| include: false
+library(psych)
+library(tidyverse)
+plot <- ggplot(diamonds, aes(carat, fill = cut)) +
+  geom_density(position = "stack") +
+  labs(title = "Density plot") +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+```
+
+Perhaps you are experimenting with some code but would like to keep it out of both the report and the analysis. To do this, you can set the option `eval` to `false`.
+
+```{r Just ignore this}
+#| eval: false
+# This code does not work but R will ignore it and not throw a fit
+sum(1:5)-foo
+```
+
+R might give you warnings that you may or may not want to see. You can show or hide them in the report with `warning: false`, respectively. Compare it with the first code chunk.
+
+```{r Loading packages with no conflict warnings}
+#| warning: false
+library(psych)
+library(tidyverse)
+```
+
+You may have a huge table you want print and it stretches your output too much (think: way over the margin of an A4 page). By default, Quarto makes it a scrollable element.
+
+```{r}
+print("For anyone wondering about the advantages of a glass cork - there are MANY. They do not bring on a cork taint as natural corks might. The seal is perfectly tight, so they don’t oxidize the wine prematurely. Most people who try glass cork vs traditional corks will not notice the difference - but wine connoisseurs absolutely will. Finally, they preserve the taste of wine aged over time to a greater degree - when you lift a glass corked wine to your nose it's much easier to smell nineteen ninety eight when the undertaker threw mankind off hell in a cell and plummeted sixteen feet through an announcers table.")
+```
+
+@tbl-options an overview of the available options. The values are always `true` or `false`. There are many more that you can explore in the documentation (see Section [Useful resources]).
+
+| Option    | Description                                                                                                                                                                                       |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `eval`    | Evaluate the code chunk (if `false`, just echos the code into the output).                                                                                                                        |
+| `echo`    | Include the source code in output                                                                                                                                                                 |
+| `output`  | Include the results of executing the code in the output (`true`, `false`, or `asis` to indicate that the output is raw markdown and should not have any of Quarto's standard enclosing markdown). |
+| `warning` | Include warnings in the output.                                                                                                                                                                   |
+| `error`   | Include errors in the output (note that this implies that errors executing code will not halt processing of the document).                                                                        |
+| `include` | Catch all for preventing any output (code or results) from being included (e.g. `include: false` suppresses all output from the code block).                                                      |
+
+: Some of the available code block/chunk options. {#tbl-options}
+
+### Plots
+
+Plots can have the same options as code chunks, because... well, they are code chunks. This is true of @fig-density.
+
+Quarto sets the plot size by default in the options, but for particularly big or small plots you can set the size manually. As with figures and tables, you can add labels/IDs (`#| label:`) and captions (`#| fig-cap:`), as long as you pay attention to the naming convention. @fig-density
+
+```{r Default plot}
+#| echo: false
+#| label: fig-density
+#| fig-cap: "This plot is without any size changes."
+plot
+```
+
+By default, the resolution of the images is 72 DPI, but you can change this manually with `dpi` and numerical value. You can change the default figure alignment by specifying the option `fig-align:`.
+
+```{r Smaller plot with set DPI and center alignment}
+#| echo: false
+#| fig-align: right
+#| label: fig-density-with-opts
+#| fig-width: 6
+#| fig-height: 3
+#| fig-dpi: 100
+#| fig-cap: "This plot is a size 3 with 100 DPI."
+plot
+diamonds %>%
+  filter(price >= 200L & price <= 10600L) %>%
+  ggplot() +
+  aes(x = price, y = carat, colour = carat) +
+  geom_point(shape = "circle", size = 0.1) +
+  scale_color_viridis_c(option = "viridis", direction = 1) +
+  labs(title = "Scatter plot") +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+diamonds %>%
+  filter(table >= 43L & table <= 70L) %>%
+  ggplot() +
+  aes(x = table, y = carat, colour = cut, size = price) +
+  geom_point(alpha=0.5) +
+  labs(title = "Bubble plot") +
+  scale_color_viridis_d(option = "viridis", direction = 1) +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+diamonds %>%
+ filter(price >= 200L & price <= 8800L) %>%
+ ggplot() +
+ aes(x = cut, y = price, fill = cut) +
+ geom_boxplot() +
+ scale_color_viridis_d(option = "viridis", direction = 1) +
+ labs(title = "Box plot") +
+ theme_minimal() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+```
+
+### Meta information
+
+Don't forget to include the session information in your report!
+
+```{r}
+sessionInfo()
+```
+
+## Diagrams
+
+Quarto has native support for embedding [Mermaid](http://mermaid.js.org/) and [Graphviz](https://graphviz.org/) diagrams. This is beyond the scope of this course, but I encourage you to check it out: [Mermaid Live Editor](https://mermaid.live/) and [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline/).
+
+```{mermaid}
+flowchart LR
+    A[How to tell if a toy\n is for BOYS or GIRLS] --> C{Do you operate the toy\n with your genitalia?}
+    C -->|Yes| D(It is NOT a toy for children)
+    C -->|No| E(It is for either BOYS or GIRLS)
+```
+
+## Adding custom themes/CSS
+
+Quarto includes 25 themes from the [Bootswatch](https://bootswatch.com/) project (see also Section [Useful resources]). Those you can set globally:
+
+```         
+format:
+  html:
+    theme: united
+```
+
+If you have your own theme or find a better one online, you can reference it as well:
+
+```         
+format:
+  html:
+    theme: my.scss
+```
+
+## Useful resources
+
+-   Documentation: <https://quarto.org/docs/guide/>
+-   More about global document options: <https://quarto.org/docs/reference/formats/html.html>
+-   HTML themes: <https://quarto.org/docs/output-formats/html-themes.html>
+-   Cheat sheet: <https://images.datacamp.com/image/upload/v1676540721/Marketing/Blog/Quarto_Cheat_Sheet.pdf>
+-   6 Productivity Hacks for Quarto: <https://posit.co/blog/6-productivity-hacks-for-quarto/>
+-   Quarto at work: <https://posit.co/blog/quarto-at-work/>
+-   Markdown table generators: [TableConvert](https://tableconvert.com/markdown-generator) and [Tables generator](https://www.tablesgenerator.com/markdown_tables).
+
+## Knitting
+
+Once you have written and saved your document, you can create your document by clicking on *Render* or pressing `CTRL+SHIFT+K`/`CMD+SHIFT+K`.
+
+Some parts of the report you may still be working on. You want to keep them in the file but you don't want them to be included. You can tell `R` to stop generating the report after a certain point by using `knitr::knit_exit()`. Everything that comes after this command will not be evaluated.
+
+```{r}
+knitr::knit_exit()
+```
+
+This code does not work but will not throw errors:
+
+```{r}
+sum(1:5)-blurb
+```

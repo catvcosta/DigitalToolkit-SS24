@@ -1,0 +1,75 @@
+Assignment 11
+Catarina Costa
+
+
+******* Questions *******
+
+1. Find the changes I made in the big project (files: big_project1.zip vs big_project2.zip) → I didn’t compile it so the PDF will look the same.
+
+2. How many times does the word "Tagblatt" appear in the files corpus1.txt, corpus2.txt, and corpus3.txt? Count only the lines.
+
+3. Count all the lines and instances where the whole article "die" appears in these 3 files. Capitalization is not important, i.e. Die OK, Dieser not OK
+
+4. What are the differences between corpus2.txt and corpus3.txt?
+
+
+******* Answers *******
+
+1. CODE: unzip big_project_*.zip / diff -r big_project1 big_project2
+
+* diff -r big_project1/chapters/chapter1.tex big_project2/chapters/chapter1.tex, line 2 (removed a double space)
+«satirical conspiracy  theory» to «satirical conspiracy theory»
+
+* diff -r big_project1/chapters/chapter2.tex big_project2/chapters/chapter2.tex, line 3 (changed a comma to a dot)
+«(population of 341,755 as of December 2021)» to «(population of 341.755 as of December 2021)»
+and line 5 (changed to number):
+«The theory poses three questions:» to «The theory poses 3 questions:»
+
+* Only in big_project1/chapters: chapter3.aux (file exists only in big_project1)
+
+* diff -r big_project1/chapters/chapter3.tex big_project2/chapters/chapter3.tex, line 5 (changed to number)
+«tenth anniversary» to «10th anniversary»
+
+* diff -r big_project1/main.tex big_project2/main.tex, line 34 (changed backmatter to blackmatter)
+«\backmatter» to «\blackmatter»
+
+* diff -r big_project1/mypreamble.sty big_project2/mypreamble.sty, line 6 (changed package languages)
+«\usepackage[german, english]{babel}» to «\usepackage[french, english]{babel}»
+
+* diff -r big_project1/title.tex big_project2/title.tex, line 7 (changed name)
+«{\Huge Anna Prysłopska}» to «{\Huge Anna Pryslopska}»
+
+
+
+2. CODE: grep -c -i -w Tagblatt corpus*.TXT
+
+corpus1 - 41
+corpus2 - 34 
+corpus3 - 34
+
+
+
+3. CODE: grep -c -i -w die corpus*.TXT / grep -o -i -w die corpus*.txt | wc -l
+
+corpus1 - lines: 325, instances: 685
+corpus2 - lines: 466, instances: 1025 
+corpus3 - lines: 466, instances: 1026
+
+
+
+4. CODE: diff corpus2.TXT corpus3.TXT
+
+* Line 77 - in corpus3 the word «Eisbärbaby» is changed to «Eisbär-Baby»
+
+* Line 430 (becomes 431-33 in corpus 3)- Two sentences are added in corpus3: «Dabei nutzen in Ägypten heute 17 Millionen Menschen das Internet, und fast ein Drittel von ihnen - 5 Millionen - ist bei Facebook angemeldet.
+Heute werden die Demonstrationen über das Internet nicht nur organisiert, sondern auch orchestriert. Kaum war die Internetsperre aufgehoben, kursierten schon wieder E-Mails mit Ratschlägen, wie man sich auf Demonstrationen <B>verhalten sollte, um</> keine Eskalation zu provozieren. Und auch wenn sich der Protest längst verselbstständigt hat, bleibt etwa Facebook doch ein wichtiger Gradmesser für die weitere Entwicklung. An der Popularität seines Profils lässt sich ablesen, wie beliebt der Oppositionspolitiker Mohammed al-Baradei derzeit ist. (T11/FEB.00754 die tageszeitung, 05.02.2011, S. 10; Wir sind alle Khaled Said)»
+
+* Line 582 - this sentence is removed in corpus3: «Die ganzen "Skandälchen" rund um den Sturz des Bundespräsidenten Wulff ließen es vermuten: da reitet einer jeden halblegal hinkenden Gaul, um sich zu bereichern. Mit den Vorgängen bei der Vorstellung des Buches seiner Frau wird diese Vermutung jetzt zur Gewissheit: Jeder miese Trick ist recht, um das Hartz-IV-Präsidentengehalt aufzubessern. Besonders verwerflich ist die mediengerechte Aufbereitung der Nuttenvermutung: Da <B>verhält</> sich jemand <B>nuttig, um</> genau diesen Netzblödsinn zu widerlegen. Am Ende bleibt das Wissen: Die Wulffs waren und sind kleinhäuslerische, auch etwas kurzsichtige und daher unbeliebte Egomanen. Michael Maresch, München (HMP12/SEP.01555 Hamburger Morgenpost, 18.09.2012, S. 23; LESERBRIEFE)»
+
+* Line 623 - in corpus3 the name «Bagnčres-de-Luchon» is changed to «Bagnères-de-Luchon»
+
+* Line 635 - in corpus3 the name «Bagnčres-de-Luchon» is changed to «Bagnères-de-Luchon»
+
+* Line 740 - in corpus3 the name «Künstler-Bohčme» is changed to «Künstler-Bohème»
+
+* Line 916 - in corpus3 the date «30.11.2013» is changed to «30.12.2013»

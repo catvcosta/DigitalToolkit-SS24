@@ -1,0 +1,146 @@
+---
+title: "Moses Report"
+author: Catarina Costa
+format: html
+editor: visual
+---
+
+# ✨ My report ✨
+
+In this report I document all steps used to analyse data from the Moses illusion experiment. It includes:
+
+-   Code to clean up the data.
+
+-   Code to read and preprocess the new data.
+
+-   Findings from the data (@tbl-results).
+
+-   An example of a really bad graph (@fig-bad) to represent this data.
+
+## Moses Illusion Experiment
+
+### Data
+
+The following code shows detailed ways to analyse two files, `moses.csv` and `moses_clean.csv`.
+
+```{r Packages to load}
+#| include: false
+library(psych)
+library(tidyverse)
+library(dplyr)
+```
+
+Here is the code that allows us to clean up the data from the Moses experiment using pipes:
+
+```{r Cleaned up Moses data using pipes}
+#| echo: true
+#| output: false
+moses <- read_csv("moses.csv")
+moses_uniq <- moses |>
+  rename(ID = MD5.hash.of.participant.s.IP.address, ANSWER = Value) |>
+  select(ID, ITEM, CONDITION, ANSWER, Label, Parameter) |>
+  na.omit() |>
+  filter(Parameter == "Final", Label != "instructions", CONDITION %in% 1:2) |>
+  arrange(ITEM, CONDITION, desc(ANSWER)) |>
+  mutate(ITEM = as.numeric(ITEM))
+```
+
+And the code to read and preprocess cleaned Moses illusion data:
+
+```{r Code to read and preprocess cleaned Moses illusion data}
+#| echo: true
+#| output: false
+moses <- read_csv('moses_clean.csv')
+questions <- read.csv('questions.csv')
+cleaned_moses <- moses |>
+  inner_join(questions, by=c("ITEM", "CONDITION", "LIST")) |>
+  select(ITEM, CONDITION, ID, ANSWER, CORRECT_ANSWER, LIST) |>
+  mutate(ACCURATE = ifelse(CORRECT_ANSWER == ANSWER,
+                           yes = "correct",
+                           no = ifelse(ANSWER == "dont_know",
+                                       yes = "dont_know",
+                                       no = "incorrect")),
+         CONDITION = case_when(CONDITION == '1' ~ 'illusion',
+                               CONDITION == '2' ~ 'no illusion',
+                               CONDITION == '100' ~ 'good filler',
+                               CONDITION == '101' ~ 'bad filler'))
+```
+
+### Findings from the data
+
+Below is the code necessary to extract some findings from the data, using `cleaned_moses` file from code snippet above. The results are summarized in @tbl-results.
+
+-   Code to find the easiest and harder questions to answer:
+
+```{r Easiest and harder questions to answer}
+#| echo: true
+#| output: false
+cleaned_moses |>
+  filter(ACCURATE == 'correct') |>
+  group_by(ITEM, ACCURATE) |>
+  summarise(Count = n()) |>
+  arrange(-Count)
+
+cleaned_moses |>
+  filter(ACCURATE == 'incorrect') |>
+  group_by(ITEM, ACCURATE) |>
+  summarise(Count = n()) |>
+  arrange(-Count)
+```
+
+-   Code to find the question that fooled the most people:
+
+```{r Question that fooled the most people}
+#| echo: true
+#| output: false
+cleaned_moses |>
+  filter(CONDITION == 'illusion') |> 
+  filter(ACCURATE == 'incorrect') |>
+  group_by(CONDITION, ITEM, ACCURATE) |>
+  summarise(Count = n()) |>
+  arrange(-Count)
+```
+
+-   Code that shows us who were the participants who got the most questions correct and incorrect:
+
+```{r Best and worst participant}
+#| echo: true
+#| output: false
+cleaned_moses |>
+  group_by(ID, ACCURATE) |>
+  filter(ACCURATE == 'correct') |>
+  summarise (Count = n()) |>
+  arrange(-Count)
+
+cleaned_moses |>
+  group_by(ID, ACCURATE) |>
+  filter(ACCURATE == 'incorrect') |>
+  summarise (Count = n()) |>
+  arrange(-Count)
+```
+
+@tbl-results shows an overview of the main findings when running the snippets of code above.
+
+| Question                             | Finding                          |
+|--------------------------------------|----------------------------------|
+| Easiest question                     | #103                             |
+| Hardest question                     | #17                              |
+| Question that fooled the most people | #2 and #12                       |
+| ID of best participant               | 880f21222ca0914d0b9f29de0e9cf92a |
+| ID of worst participant              | 19c2d7b9ded0b515c030e3b36dd11909 |
+
+: Findings from Moses illusion data. {#tbl-results}
+
+### Visualising the data
+
+There are many ways to visualise data. In our class, we used `ggplot` and, more specifically, the package `esquisse`. Several graphs were generated, but bellow is an example of a really inaccessible way to represent your data #do_not_try_this_at_home.
+
+![Awful way to represent your data.](topbadplot.png){#fig-bad}
+
+### Meta information
+
+Never forget to include the session information in your report!
+
+```{r}
+sessionInfo()
+```

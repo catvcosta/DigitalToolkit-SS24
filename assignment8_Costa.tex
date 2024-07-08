@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+
+\title{Noisy Channel Experiment Report}
+\author{Catarina Costa}
+\date{June 14\textsuperscript{th}, 2024}
+
+\begin{document}
+\maketitle
+\section{Noisy Channel}
+
+The Noisy Channel Experiment is based on the assumption that humans can understand language even in noisy environments, and can recover meaning from imperfect utterances. Semantic cues can help us choose plausible meanings, but too much noise makes listeners or readers switch to the literal interpretation.
+
+The noisy channel model is also a framework used in spell checkers speech recognition, and machine translation, among others. The goal of this model in Natural Language Processing is to find the intended word given a word where the letters have been scrambled in some manner.
+
+\section{Experiment}
+This experiment was conducted in the context of the class Digital Research Toolkit for Linguists, Summer Semester 2024, in order to gather data to then be analysed during class. In the experiment, participants read sentences at a self-paced rhythm and then judged their acceptability.
+\subsection{Methods}
+\subsubsection{Participants}
+This experiment was shared with course participants, who then would have to recruit at least one more person to answer the experiment.
+\subsubsection{Materials}
+The experiment was prepared and organized by the teacher of this course, Anna Pryslopska, and there were only two conditions (plausible and implausible for each sentence pair). An example can be seen below: 
+\begin{itemize}
+    \item The apprentice*fetched*the carpenter*a hammer. → plausible
+    \item The apprentice*fetched*a hammer*the carpenter. → implausible
+\end{itemize}
+Materials were kindly shared by Ted Gibson (Gibson et al. 2013).
+\subsubsection{Procedure}
+To take part in this study, it was necessary to have only a computer with a keyboard. The task\footnote{The actual procedure and experiment can be consulted \href{https://farm.pcibex.net/p/ceZUkj/}{here}} in this experiment consisted of reading sentences and rating their naturalness, on a scale of 1 ("very unnatural") to 5 ("very natural").
+\subsection{Predictions}
+It was expected that plausible sentences would get a higher "very natural" score, compared to their implausible counterpart.
+\subsection{Analysis and Results}
+In class, using R and RStudio, we analysed the results of this experiment (or how which sentence was rated), as well as the reading time necessary for each participant.
+\section{Discussion}
+Even though the sentences were scrambled and rated as "unnatural", it was still possible to guess their meaning, therefore proving the Noisy Channel assumption.
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{qtree}
+\usepackage{gb4e}
+
+\title{Moses Illusion Experiment Report}
+\author{Catarina Costa}
+\date{June 21\textsuperscript{st}, 2024}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\vspace{0.5cm}
+
+\underline{For Anna}: In this assignment, we were supposed to include at least one table and one figure of the data (with captions) and reference them in the text. I couldn't do this: I get an error \textit{TeX capacity exceeded, sorry} in Overleaf that I don't know how to fix, and I'm now too close to the deadline... I will try to do it over the weekend!
+
+\section{Moses Illusion}
+
+\textit{How many animals of each kind did Moses take on the ark?} If you answered \enquote{two} to this question, you have fallen into the Moses illusion. According to Erickson and Matton, 1981, Moses Illusions or semantic illusions occur when readers fail to recognize the inconsistency in a text even if they were warned and know the correct word. In this case, you would have to be quick to realise that Noah took animals on the ark, not Moses.
+
+\section{Experiment}
+This experiment was conducted in the context of the class Digital Research Toolkit for Linguists, Summer Semester 2024, in order to gather data to then be analysed during class. In the experiment, the task was to:
+\begin{itemize}
+    \item Answer the questions in a questionnaire.
+    \item Answer \enquote{don't know} if you didn't know the answer.
+    \item Answer \enquote{can't answer} if a question seemed distorted or nonsensical.
+\end{itemize}
+
+An example question could be "Cairo is the capital of which African country?" and the corresponding answer is "Egypt". An example of an illusion question could be:
+
+\Tree [.S This
+[.VP [.V is ]
+[.DP [.D a ]
+\qroof{question:}.NP ] ] ]
+
+
+
+\begin{exe}
+\ex \begin{xlist}
+\ex \gll How many fingers do fish have on their hind legs?\\
+Quantos dedos têm os peixes nas suas pernas traseiras?\\
+\end{xlist}
+\end{exe}
+
+To which the answer would be \enquote{can't answer}.
+
+\subsection{Methods}
+\subsubsection{Participants}
+This experiment was shared with course participants, who then would have to recruit at least one more person to answer the experiment.
+\subsubsection{Materials}
+The experiment was prepared and organized by the teacher of this course, Anna Pryslopska. To take part in this study, it was necessary to have only a computer with a keyboard.
+
+\subsubsection{Procedure}
+The task\footnote{The actual procedure and experiment can be consulted \href{https://farm.pcibex.net/p/glQRwV/}{here}} in this experiment consisted of reading and answering questions, as explained in section \textbf{2. Experiment}.
+\subsection{Predictions}
+It could be expected that a lot of people would fall for the Moses Illusion, producing very interesting results.
+In Table 1 are some of the results we saw:
+
+\subsection{Analysis and Results}
+In class, using R and RStudio, we analysed the results of this experiment, as well as the reading time necessary for each participant.
+\section{Discussion}
+Why do people fall so easily into the Moses Illusions? It was a very interesting experiment and shows how easily of a prey we are to misinformation.
+
+Here is a semantic formula, because why not:
+\[
+\models (P \land Q) \rightarrow R
+\]
+\end{document}

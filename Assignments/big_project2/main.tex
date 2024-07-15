@@ -1,0 +1,38 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{import}
+\usepackage[backend = biber, style=authoryear]{biblatex}
+\usepackage[top=1in]{geometry}
+
+\addbibresource{book.bib}
+\usepackage{mypreamble}
+
+\begin{document}
+
+\frontmatter
+\import{./}{title.tex}
+
+\clearpage
+\thispagestyle{empty}
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Introduction}
+
+This text is taken and slightly edited from \textcite{bielefeld}.
+
+\chapter{First chapter}
+\import{chapters/}{chapter1.tex}
+
+\chapter{Second chapter}
+\import{chapters/}{chapter2.tex}
+
+\chapter{Third chapter}
+\include{chapters/chapter3.tex}
+
+\blackmatter
+
+\printbibliography
+
+\end{document}
